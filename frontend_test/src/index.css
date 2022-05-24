@@ -1,9 +1,54 @@
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.h100{
-    height: 100vh;
+.colflex{
+  flex-direction: column;
+}
+
+.h100 {
+  height: 100vh;
+}
+
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th,
+tfoot td {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4caf50;
+  color: white;
+}
+
+.createEditbtn {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.Buttongroup {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 20px;
 }

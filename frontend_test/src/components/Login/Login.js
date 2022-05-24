@@ -1,12 +1,25 @@
 import { Button, Checkbox, Form, Input } from "antd";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../action";
-const Login = () => {
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-  const dispatch = useDispatch()
+const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const AuthData = useSelector((store) => store.auth);
+
+  // redirect user after sucsessfull login
+  useEffect(() => {
+    if (AuthData.loading === false) {
+      if (Object.keys(AuthData.data).length !== 0) {
+        navigate("/home");
+      }
+    }
+  }, [AuthData]);
 
   const onFinish = (values) => {
-    dispatch(login(values))
+    dispatch(login(values));
     // console.log("Success:", values);
   };
 
@@ -15,7 +28,7 @@ const Login = () => {
   };
 
   return (
-    <div className="center h100">
+    <div className="center h100 colflex">
       <Form
         name="basic"
         labelCol={{
@@ -29,7 +42,6 @@ const Login = () => {
         }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        autoComplete="off"
       >
         <Form.Item
           label="Username"
@@ -64,10 +76,13 @@ const Login = () => {
           }}
         >
           <Button type="primary" htmlType="submit">
-            Submit
+            Login
           </Button>
         </Form.Item>
       </Form>
+      <Button>
+        <Link to={"/register"}>Register Here!</Link>
+      </Button>
     </div>
   );
 };

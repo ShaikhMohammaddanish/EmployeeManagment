@@ -1,9 +1,16 @@
-import React from 'react'
-import Header from '../reuseables/Header'
+import React from "react";
+import Header from "../reuseables/Header";
+import DisplayAlldata from "./TableManager/DisplayAlldata";
+
+
+
 function Home() {
   return (
-    <Header/>
-  )
+    <>
+      <Header />
+      <DisplayAlldata/>
+    </>
+  );
 }
 
-export default Home
+export default Home;
