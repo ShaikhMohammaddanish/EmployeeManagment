@@ -10,10 +10,11 @@ const authReducer =( state=initialState, action)=>{
             return {...state,'loading':true}
 
         case LoginFail:
-            return {...state,'loading':false, error:action.pyload.error}
+            return {...state,'loading':false, error:action.payload.error}
 
         case LoginDone:
-            return {...state,'loading':false, data:action.pyload.data}
+            console.log('in reducer login done',action.payload)
+            return {...state,'loading':false, data:action.payload}
         
         case Logout:
             return {...state,'loading':false, data:{}, error:''}

@@ -4,7 +4,7 @@ import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import thunk from 'redux-thunk'
-
+import './index.css'
 import { createStore,applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import RootReducer from "./reducer";
