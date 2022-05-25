@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../action";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Modal } from 'antd';
 
 
 function Register() {
@@ -16,7 +17,24 @@ function Register() {
   const navigate = useNavigate();
   const AuthData = useSelector((store) => store.auth);
 
-  // redirect user after sucsessfull login
+
+
+
+  const success = () => {
+      Modal.success({
+        content: 'User created sucsessfully.',
+        onOk() {
+          navigate("/home");
+  
+        }
+      }, 
+      );
+    };
+    
+
+
+
+  // redirect user after sucsessfull login/ if user is already logedin
   useEffect(() => {
     if (AuthData.loading === false) {
       if (Object.keys(AuthData.data).length !== 0) {
@@ -26,7 +44,7 @@ function Register() {
   }, [AuthData]);
 
   const onFinish = (values) => {
-    dispatch(register(values, navigate));
+    dispatch(register(values,success));
     // console.log("Success:", values);
   };
 
