@@ -23,8 +23,6 @@ npm start
 ```
 https://youtu.be/eW9jIaliHmc
 
-![](https://youtu.be/eW9jIaliHmc)
-[![](https://markdown-videos-api.jorgenkh.no/youtube/eW9jIaliHmc)](https://youtu.be/eW9jIaliHmc)
 
 ## Contributing
 Fell free to contact for any quary
